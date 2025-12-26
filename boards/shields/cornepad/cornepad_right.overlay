@@ -136,7 +136,7 @@
         <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
         <&zip_xy_scaler 3 1>;
     };
-          scroller {
+    scroller {
         //layers = <SCROLL>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
@@ -145,3 +145,8 @@
     }; // end scroller
 };
 
+/ {
+    chosen {
+        zmk,pointing-device = &glidepoint;
+    };
+};
