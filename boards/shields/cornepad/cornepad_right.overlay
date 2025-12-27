@@ -121,17 +121,12 @@
         compatible = "cirque,pinnacle";
         reg = <0>;
         spi-max-frequency = <1000000>;
-        sensitivity = <1>;
+        sensitivity = "1x";
         status = "okay";
     };
 };
 / {
     chosen {
         zmk,pointing-device = &glidepoint;
-    };
-
-    glidepoint_listener {
-        compatible = "zmk,input-listener";
-        device = <&glidepoint>;
     };
 };
