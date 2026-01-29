@@ -56,7 +56,13 @@
         code_snippet: code_snippet {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp RET &kp RET &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW>;
+            bindings =
+                <&kp GRAVE &kp GRAVE &kp GRAVE>,
+                <&macro_press>,
+                <&kp LSHFT &kp RET &kp RET>,
+                <&macro_release>,
+                <&kp LSHFT &kp GRAVE &kp GRAVE &kp GRAVE &kp UP_ARROW>;
+
             label = "CODE_SNIPPET";
         };
     };
