@@ -55,18 +55,6 @@
     };
 };
 
-
-
-
-
-
-
-
-// #define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
-// #define ZMK_POINTING_DEFAULT_SCRL_VAL 100    // default: 10
-
-
-
 &pinctrl {
     /* configuration for spi1 device, default state */
     spi1_default: spi1_default {
