@@ -10,6 +10,7 @@
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &foostan_corne_6col_layout;
         zephyr,display = &mock_display;
+        zephyr,underglow = &mock_underglow;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -34,5 +35,11 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5)  RC(2,6) RC(2,7) RC(2,8) RC(2,9)
     mock_display: display {
         compatible = "zephyr,display";
         status = "disabled";
+    };
+
+    mock_underglow: underglow {
+        compatible = "zmk,underglow";
+        status = "disabled";
+        chain-length = <0>;
     };
 };
