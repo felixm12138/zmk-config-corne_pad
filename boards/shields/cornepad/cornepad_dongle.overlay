@@ -10,7 +10,7 @@
         zmk,kscan = &mock_kscan;
         zmk,physical-layout = &foostan_corne_6col_layout;
         zephyr,display = &mock_display;
-        zephyr,underglow = &mock_underglow;
+        zmk,underglow = &mock_underglow;
     };
 
     mock_kscan: mock_kscan_0 {
