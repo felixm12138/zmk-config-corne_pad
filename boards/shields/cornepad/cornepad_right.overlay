@@ -38,7 +38,7 @@
     label = "WS2812";
     /* SPI */
     reg = <0>; /* ignored, but necessary for SPI bindings */
-    spi-max-frequency = <4000000>;
+    spi-max-frequency = <1000000>;
     /* WS2812 */
     chain-length = <21>; /* number of LEDs */
     spi-one-frame = <0x70>;
@@ -54,17 +54,6 @@
         zmk,underglow = &led_strip;
     };
 };
-
-
-
-
-
-
-
-
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
-
 
 
 &pinctrl {
@@ -125,25 +114,24 @@
         dr-gpios = <&gpio1 04 (GPIO_ACTIVE_HIGH)>;
 
         sensitivity = "1x";
-        sleep;
+        //sleep;
         // no-taps;
     };
 };
-//INPUT_TRANSFORM_XY_SWAP
 / {
     glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint>;
         input-processors = 
         <&zip_xy_transform (INPUT_TRANSFORM_Y_INVERT)>,
-        <&zip_xy_scaler 3 1>;
-    };
+        <&zip_xy_scaler 5 2>;
           scroller {
-        //layers = <SCROLL>;
+        layers = <1 2>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>,
+            <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
-    }; // end scroller
+        };
+    }; 
 };
 
